@@ -31,11 +31,6 @@ namespace ZonePlay.Zone
         public Zone1(int width, int height)
             :base(width,height)
         {
-            if (width % 2 == 0 || height % 2 == 0)
-            {
-                throw new Exception("深度优先算法迷宫的宽高必须为奇数！");
-            }
-
             // 将迷宫使用十字的墙隔开
             for (int i = 1; i <= width; i ++)
             {

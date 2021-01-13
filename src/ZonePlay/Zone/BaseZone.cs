@@ -15,6 +15,10 @@ namespace ZonePlay.Zone
 
         public BaseZone(int width, int height)
         {
+            if (width % 2 == 0 || height % 2 == 0)
+            {
+                throw new Exception("迷宫的宽和高必须为奇数！");
+            }
             zWidth = width;
             zHeight = height;
 
@@ -45,7 +49,7 @@ namespace ZonePlay.Zone
         protected abstract void CreateZone();
 
         
-        protected bool CheckPoint(Point p, int value)
+        public bool CheckPoint(Point p, int value)
         {
             if (p.X >= 1 && p.Y >= 1 && p.X < zWidth + 1 && p.Y < zHeight + 1)
             {

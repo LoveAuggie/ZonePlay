@@ -17,5 +17,22 @@ namespace ZonePlay.Zone
             this.X = x;
             this.Y = y;
         }
+
+        internal Point GetNextPoint(Dir dir)
+        {
+            switch (dir)
+            {
+                case Dir.Shang:
+                    return new Point(this.X, this.Y - 1);
+                case Dir.Xia:
+                    return new Point(this.X, this.Y + 1);
+                case Dir.Zuo:
+                    return new Point(this.X - 1, this.Y);
+                case Dir.You:
+                    return new Point(this.X + 1, this.Y);
+                default:
+                    return this;
+            }
+        }
     }
 }
